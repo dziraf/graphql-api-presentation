@@ -13,18 +13,21 @@ const fakes = async () => {
   const data = Array.from({ length: config.fakes.blogPostsCount }, () => {
     const post = new BlogPost();
     post.content = faker.lorem.paragraph();
-    post.comments = Array.from({ length: config.fakes.commentsPerPostCount }, () => {
-      const comment = new Comment();
-      comment.content = faker.lorem.sentence();
+    post.comments = Array.from(
+      { length: config.fakes.commentsPerPostCount },
+      () => {
+        const comment = new Comment();
+        comment.content = faker.lorem.sentence();
 
-      return comment;
-    });
+        return comment;
+      },
+    );
 
     return post;
   });
 
   await repository.save(data);
-}
+};
 
 fakes()
   .then(() => process.exit(0))
@@ -32,4 +35,4 @@ fakes()
     // eslint-disable-next-line no-console
     console.log(err);
     process.exit(1);
-  })
+  });
