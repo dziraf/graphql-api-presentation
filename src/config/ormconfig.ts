@@ -7,6 +7,7 @@ module.exports = {
   name: 'default',
   type: 'postgres',
   ssl: config.database.ssl === true ? { require: true } : undefined,
+  logging: 'all',
   cli: { migrationsDir: './src/db/migrations' },
   migrations: ['./dist/db/migrations/*.js'],
   entities: ['./dist/**/*.entity.js'],
