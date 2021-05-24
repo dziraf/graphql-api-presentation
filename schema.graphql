@@ -1,0 +1,31 @@
+type BlogPost {
+  id: Int!
+  content: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Comment {
+  id: Int!
+  content: String!
+  createdAt: String!
+  updatedAt: String!
+}
+
+input AddBlogPostInput {
+  content: String!
+}
+
+input AddCommentInput {
+  content: String!
+  blogPostId: Int!
+}
+
+type Query {
+  blogPosts: [BlogPost!]!
+}
+
+type Mutation {
+  addBlogPost(data: AddBlogPostInput!): BlogPost
+  addComment(data: AddCommentInput!): Comment
+}
