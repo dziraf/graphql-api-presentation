@@ -1,8 +1,10 @@
+import { BlogPostService } from './../../../../blog-post/blog-post.service';
 import { BlogPostData } from '../../../../blog-post/blog-post.entity';
 
 export default async function addBlogPost(
   _: any,
-  _args: { data: Pick<BlogPostData, 'content'> },
+  args: { data: Pick<BlogPostData, 'content'> },
 ) {
-  return null;
+  const blogPostService = new BlogPostService();
+  return blogPostService.addBlogPost(args.data);
 }

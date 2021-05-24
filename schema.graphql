@@ -28,6 +28,6 @@ type Query {
 }
 
 type Mutation {
-  addBlogPost(data: AddBlogPostInput!): BlogPost
-  addComment(data: AddCommentInput!): Comment
+  addBlogPost(data: AddBlogPostInput!): BlogPost!
+  addComment(data: AddCommentInput!): Comment!
 }

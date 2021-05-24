@@ -1,8 +1,10 @@
+import { CommentService } from './../../../../comment/comment.service';
 import { CommentData } from '../../../../comment';
 
 export default async function addComment(
   _: any,
-  _args: { data: Pick<CommentData, 'content' | 'blogPostId'> },
+  args: { data: Pick<CommentData, 'content' | 'blogPostId'> },
 ) {
-  return null;
+  const commentService = new CommentService();
+  return commentService.addComment(args.data);
 }
