@@ -22,6 +22,9 @@ export interface CommentData {
   id: number;
   content: string;
   blogPostId: number;
+  createdAt: Date;
+  updatedAt: Date;
+  blogPost?: BlogPost;
 }
 
 @Entity('comments')

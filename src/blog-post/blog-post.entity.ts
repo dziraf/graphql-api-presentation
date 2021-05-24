@@ -15,6 +15,9 @@ import { Comment } from '../comment';
 export interface BlogPostData {
   id: number;
   content: string;
+  createdAt: Date;
+  updatedAt: Date;
+  comments?: Comment[];
 }
 
 @Entity('blog_posts')
