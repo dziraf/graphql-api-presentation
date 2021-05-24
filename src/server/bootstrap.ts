@@ -7,9 +7,10 @@ import { setupGraphQLServer } from './graphql';
 export const bootstrap = (): http.Server => {
   const app = express();
 
-  setupGraphQLServer(app);
+  const graphQLServer = setupGraphQLServer(app);
 
   const httpServer = http.createServer(app);
+  graphQLServer.installSubscriptionHandlers(httpServer);
 
   return httpServer;
 };

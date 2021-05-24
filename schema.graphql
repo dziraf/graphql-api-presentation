@@ -31,3 +31,7 @@ type Mutation {
   addBlogPost(data: AddBlogPostInput!): BlogPost!
   addComment(data: AddCommentInput!): Comment!
 }
+
+type Subscription {
+  commentAdded: Comment
+}
