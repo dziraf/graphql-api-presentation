@@ -1,0 +1,25 @@
+  
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": false,
+    "removeComments": false,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "target": "ES2017",
+    "sourceMap": false,
+    "baseUrl": "./",
+    "outDir": "dist",
+    "incremental": false,
+    "strict": true,
+    "jsx": "react",
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "typeRoots": ["node_modules/@types"]
+  },
+  "include": ["src/**/*"]
+}
