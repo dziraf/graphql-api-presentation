@@ -1,5 +1,4 @@
-import { BlogPostService } from './../../../../blog-post/blog-post.service';
-import { BlogPostData } from '../../../../blog-post/blog-post.entity';
+import { BlogPostService, BlogPostData } from '../../../../blog-post';
 
 export default async function addBlogPost(
   _: any,

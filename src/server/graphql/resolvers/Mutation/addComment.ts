@@ -1,7 +1,8 @@
-// import { classToPlain } from 'class-transformer';
-import { CommentService } from './../../../../comment/comment.service';
+import { classToPlain } from 'class-transformer';
+
+import { CommentService } from '../../../../comment/comment.service';
 import { CommentData } from '../../../../comment';
-// import pubsub from '../../../../utils/pubsub';
+import pubsub from '../../../../utils/pubsub';
 
 export default async function addComment(
   _: any,
@@ -10,9 +11,9 @@ export default async function addComment(
   const commentService = new CommentService();
   const comment = commentService.addComment(args.data);
 
-  // pubsub.publish('COMMENT_ADDED', {
-  //   commentAdded: classToPlain(comment),
-  // });
+  pubsub.publish('COMMENT_ADDED', {
+    commentAdded: classToPlain(comment),
+  });
 
   return comment;
 }
